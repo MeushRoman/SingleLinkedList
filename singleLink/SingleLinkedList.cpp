@@ -21,7 +21,7 @@ void SingleLinkedList<T>::push_back(const T & obj)
 	}
 
 	cursor->next = newElem;
-	whle(cursor->next != nullptr)
+	while(cursor->next != nullptr)
 		cursor = cursor->next;
 
 	cursor->next = newElem;
@@ -79,6 +79,7 @@ void SingleLinkedList<T>::pop_back(const T & obj)
 		delete head;
 		size = 0;
 		head = nullptr;
+		return;
 	}
 
 
@@ -87,7 +88,7 @@ void SingleLinkedList<T>::pop_back(const T & obj)
 		cursor = cursor->next;
 	}
 
-	deete cursor->next;
+	delete cursor->next;
 	cursor->next = nullptr;
 
 	size--;
@@ -108,6 +109,11 @@ void SingleLinkedList<T>::pop_front(const T & obj)
 	delete head;
 	head = cursor;
 	size--;
+}
+
+template<class T>
+void SingleLinkedList<T>::erase(const T & obj, int position)
+{
 }
 
 
